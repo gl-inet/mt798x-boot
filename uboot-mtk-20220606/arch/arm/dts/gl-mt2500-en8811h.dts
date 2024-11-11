@@ -1,0 +1,21 @@
+/dts-v1/;
+#include "gl-mt2500.dtsi"
+
+&eth {
+	status = "okay";
+	mediatek,gmac-id = <0>;
+	phy-mode = "sgmii";
+	phy-handle = <&phy13>;
+	reset-gpios = <&gpio 14 GPIO_ACTIVE_HIGH>;
+
+	mdio {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		phy13: ethernet-phy@13 {
+			compatible = "ethernet-phy-id03a2.a411";
+			reg = <0xd>;
+			phy-mode = "sgmii";
+		};
+	};
+};
