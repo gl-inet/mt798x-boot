@@ -274,6 +274,7 @@ static bool bootargs_find(const struct bootarg *bootargs, u32 count,
 	return false;
 }
 
+#ifdef CONFIG_MTK_SECURE_BOOT
 static char *strconcat(char *dst, const char *src)
 {
 	while (*src)
@@ -289,6 +290,7 @@ static char *strnconcat(char *dst, const char *src, size_t n)
 
 	return dst;
 }
+#endif
 
 int cmdline_merge(const char *cmdline, const struct bootarg *bootargs,
 		  u32 count, char **result)
